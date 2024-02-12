@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Login";
 import Profile from "./Profile";
 import AuthProvider from "./providers/AuthProvider";
-import PrivateRoute from "./components/Protected";
+import Protected from "./components/Protected";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <AuthProvider>
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route element={<PrivateRoute />}>
+            <Route element={<Protected />}>
               <Route path="/profile" element={<Profile />} />
             </Route>
           </Routes>
